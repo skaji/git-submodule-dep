@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use utf8;
+use 5.014;
+use App::GitSubmoduleDep;
+
+App::GitSubmoduleDep->new->parse_options(@ARGV)->run;
+
+__END__
+
+=head1 NAME
+
+git-submodule-dep - manage dependencies by git submodule + symlink
+
+=head1 SYNOPSIS
+
+    > git-submodule-dep [OPTIONS] ARGS
+
+    Eg:
+    > git-submodule-dep git://github.com/hoge/Module-Name.git
+    > git-submodule-dep --delete Module-Name
+
+    Options:
+    -h, --help           show this help
+    -d, --delete         delete git submodule
+        --dir DIRECTORY  directory where submodules will be added, default modules/
+
+=head1 AUTHOR
+
+Shoichi Kaji
+
+=cut
